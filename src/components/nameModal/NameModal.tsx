@@ -9,9 +9,11 @@ const NameModal = () => {
   const dispatch = useAppDispatch();
   const [player1Name, setPlayer1Name] = useState('');
   const [player2Name, setPlayer2Name] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const fieldOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
+    setErrorMessage('');
     const { name, value } = e.target;
     switch (name) {
       case 'player1-name':
@@ -26,16 +28,22 @@ const NameModal = () => {
   const formOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (player1Name !== '' && player2Name !== '') {
+    if(player1Name.toLowerCase() === player2Name.toLowerCase()){
+      // players cant have same name
+      setErrorMessage("Both players can't have the same. Please enter unique names.");
+      return;
+    }
+    else if (player1Name !== '' && player2Name !== '') {
       dispatch(initializeGame({
         player1: player1Name,
         player2: player2Name,
       }));
     }
-
-    if(player1Name.toLowerCase() === player2Name.toLowerCase()){
-      // players cant have same name
+    else{
+      return;
     }
+
+   
   };
 
   return (
@@ -77,6 +85,7 @@ const NameModal = () => {
                 onChange={fieldOnchange}
               />
             </div>
+            <small className='name-modal-text-error'>{errorMessage}</small>
             <div className='name-modal-field-container'>
               <input 
                 type='submit' 
