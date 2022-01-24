@@ -1,0 +1,29 @@
+.winner-modal-crown-symbol {
+  font-size: 10rem;
+  margin: -3rem auto 0;
+  text-align: center;
+}
+
+.winner-modal-button-container {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.winner-modal-button {
+  margin: 0 0 0 0.6rem;
+}
+
+.winner-modal-button:first-of-type {
+  background-color: var(--white);
+  border: 0;
+  color: var(--primary-blue);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.winner-modal-button:last-of-type {
+  margin-left: auto;
+}

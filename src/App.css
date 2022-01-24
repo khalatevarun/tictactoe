@@ -1,0 +1,103 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --primary-blue: #004d7a;
+  --primary-blue-shadow: #0869723f;
+  --light-grey: #ced4da;
+  --container-boarder: #00000010;
+  --container-shadow: #00000029;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.modal-backdrop,
+.modal-outer-container {
+  background-color: var(--black);
+  height: 100vh;
+  opacity: 0.5;
+  position: fixed;
+  transition: opacity 0.3s ease;
+  width: 100vw;
+  z-index: 1;
+}
+
+.modal-outer-container {
+  background-color: transparent;
+  opacity: 1;
+  z-index: 2;
+}
+
+.modal-container {
+  background-color: var(--white);
+  border-radius: 0.3rem;
+  margin: 20vh auto auto;
+  max-width: 90%;
+  padding: 2rem 2rem;
+  position: relative;
+  width: 500px;
+}
+
+.modal-heading {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  text-align: center;
+  user-select: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.primary-button {
+  background-color: var(--primary-blue);
+  border: 0;
+  border-radius: 0.3rem;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.primary-button:focus {
+  outline: 0;
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.primary-button:focus-visible {
+  box-shadow: 0 0 0 0.2rem var(--primary-blue-shadow);
+}

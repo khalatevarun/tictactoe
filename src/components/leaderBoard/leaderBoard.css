@@ -1,0 +1,54 @@
+.leaderboard-outer-container {
+  border: 0.1rem solid var(--container-border);
+  border-radius: 0.4rem;
+  box-shadow: 0 8px 15px var(--container-shadow);
+
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+}
+
+.leaderboard-users-container {
+  height: calc(80vh - 100px);
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.leaderboard-user-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leaderboard-user-container img {
+  flex: 0 0 50px;
+  height: 50px;
+  margin-bottom: -1rem;
+  vertical-align: baseline;
+  width: 50px;
+}
+
+.leaderboard-user {
+  flex: 0 0 calc(100% - 60px);
+}
+
+.leaderboard-user-name {
+  font-size: 1.5rem;
+  margin: 0.5rem auto 0;
+}
+
+.leaderboard-user-details {
+  font-size: 1rem;
+  margin: 0.4rem auto 0;
+}
+
+.leaderboard-outer-container hr {
+  opacity: 0.5;
+  width: 80%;
+}
+
+@media (max-width: 632px) {
+  .leaderboard-outer-container {
+    flex-basis: 100%;
+  }
+}

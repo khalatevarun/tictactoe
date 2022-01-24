@@ -1,0 +1,145 @@
+.gameboard-game-container {
+  border: 0.1rem solid var(--container-border);
+  border-radius: 0.4rem;
+  box-shadow: 0 8px 15px var(--container-shadow);
+  width: 900px;
+  padding: 1rem;
+  background: white;
+}
+
+.gameboard-heading {
+  padding-left: 1rem;
+  text-align: center;
+}
+
+.gameboard-outer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.gameboard-player-details {
+  align-self: center;
+  color: var(--primary-blue);
+  font-size: 4rem;
+  font-weight: 900;
+  min-width: 120px;
+  text-align: center;
+}
+
+.gameboard-player-details p {
+  color: var(--black);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 auto;
+  max-width: 120px;
+  overflow: hidden;
+  padding-bottom: 0.1rem;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.gameboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  max-height: 304px;
+  max-width: 304px;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.gameboard-squares {
+  align-items: center;
+  border: 1px solid var(--black);
+  color: var(--primary-blue);
+  cursor: pointer;
+  display: flex;
+  height: 100px;
+  flex: 0 0 33.33%;
+  font-size: 4rem;
+  font-weight: 900;
+  justify-content: center;
+}
+
+.gameboard-squares:nth-child(1),
+.gameboard-squares:nth-child(2),
+.gameboard-squares:nth-child(3) {
+  border-top: 0;
+}
+
+.gameboard-squares:nth-child(3n + 1) {
+  border-left: 0;
+}
+
+.gameboard-squares:nth-child(3n + 3) {
+  border-right: 0;
+}
+
+.gameboard-squares:nth-child(7),
+.gameboard-squares:nth-child(8),
+.gameboard-squares:nth-child(9) {
+  border-bottom: 0;
+}
+
+.gameboard-user-container {
+  margin-top: 4rem;
+}
+
+.gameboard-user-container h6 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+.gameboard-user-container .gameboard-user-icon {
+  height: 22px;
+  padding-bottom: 2px;
+  vertical-align: text-bottom;
+  width: 20px;
+}
+
+.gameboard-buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.gameboard-buttons {
+  margin: 0.6rem;
+}
+
+@media (max-width: 992px) {
+  .gameboard-game-container {
+    margin-bottom: 2rem;
+    max-height: none;
+  }
+
+  .gameboard-container {
+    flex-basis: 100%;
+    order: 0;
+  }
+
+  .gameboard-player-details {
+    flex-basis: 50%;
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .gameboard-game-container {
+    flex-basis: 50%;
+  }
+
+  .gameboard-heading {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 632px) {
+  .gameboard-game-container {
+    flex-basis: 100%;
+  }
+}
