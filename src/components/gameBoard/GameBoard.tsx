@@ -4,6 +4,7 @@ import userIcon from '../../../assets/images/userIcon.png';
 import {
   playTurn,
   resetGame,
+  startNewGame,
   undoTurn,
 } from '../../redux/actions/gameActions';
 import {
@@ -48,6 +49,15 @@ const GameBoard = () => {
       )
     }
     return squaresArray;
+  }
+
+  const buttonOnClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, isNewGame: boolean) => {
+    e.preventDefault();
+    if (isNewGame) {
+      dispatch(startNewGame());
+    } else {
+      dispatch(resetGame());
+    }
   }
   
   const boardSquareOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -119,7 +129,9 @@ const GameBoard = () => {
         </h6>
       </div>
       <div className='gameboard-buttons-container'>
-       
+      <button  className='primary-button gameboard-buttons'onClick={(e) => buttonOnClick(e, true)}>
+            Launch New
+          </button>
      <button 
           className='primary-button gameboard-buttons'
           disabled={gameStatus !== 'playing'}
