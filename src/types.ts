@@ -35,4 +35,5 @@ export type gameDataType = {
   undoPlayer1: number;
   undoPlayer2: number;
   timePerMove:number | null;
+  timeRemaining:number;
 }

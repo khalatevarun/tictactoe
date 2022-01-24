@@ -18,6 +18,7 @@ const initialState: gameDataType = {
   undoPlayer1: 0,
   undoPlayer2: 0,
   timePerMove:null,
+  timeRemaining:0,
 };
 
 const gameReducer = (
@@ -37,6 +38,7 @@ const gameReducer = (
         undoPlayer1: onboardData.undoMovesPerPlayer,
         undoPlayer2: onboardData.undoMovesPerPlayer,
         timePerMove: onboardData.timePerMove,
+        timeRemainging: 5,
       };
       
     case PLAY_TURN:

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useAppSelector } from "../../redux/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/store/hooks";
 
 type CountdownTimerProps = {
     seconds: number;
@@ -9,13 +9,12 @@ type CountdownTimerProps = {
     strokeWidth: number;
   };
   
-
-  
 export  const CountdownTimer = (props:CountdownTimerProps) => {
 
+    const dispatch = useAppDispatch();
 
-  
- 
+    const {timeRemaining, gameStatus, currentPlayer}  = useAppSelector((state) => state.gameData);
+
     const [milliseconds,setMilliseconds] = useState(props.seconds * 1000);
     const [countdown, setCountdown] = useState(milliseconds);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -40,6 +39,25 @@ export  const CountdownTimer = (props:CountdownTimerProps) => {
         }
       }, 10);
     };
+
+    useEffect(()=>{
+
+      const interval = setInterval(() => {
+        setCountdown(countdown-10);
+        if (countdown === 0) {
+          clearInterval(interval);
+          setCountdown(milliseconds);
+          setIsPlaying(false);
+        }
+      }, 10);
+
+
+    },[currentPlayer, timeRemaining]);
+
+
+    useEffect(()=>{
+      clearInterval(interval)
+    })
   
    
       const countdownSizeStyles = {
