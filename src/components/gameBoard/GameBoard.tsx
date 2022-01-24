@@ -76,7 +76,7 @@ const GameBoard = () => {
       <h2 className='modal-heading gameboard-heading'>
         PlayGround
       </h2>
-      <div style={{
+      {/* <div style={{
           display: 'flex',
           justifyContent: 'space-around', 
           flexWrap: 'wrap',
@@ -89,7 +89,7 @@ const GameBoard = () => {
         strokeColor="red"
         strokeWidth={2}
       />
-        </div>
+        </div> */}
       <div className="gameboard-outer-container">
      
         <div className="gameboard-player-details">

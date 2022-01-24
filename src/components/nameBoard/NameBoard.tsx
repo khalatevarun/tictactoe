@@ -1,16 +1,17 @@
-import './nameModal.css';
+import './nameBoard.css';
 
 import { useState } from 'react';
 
 import { initializeGame } from '../../redux/actions/gameActions';
 import { useAppDispatch } from '../../redux/store/hooks';
 
-const NameModal = () => {
+const NameBoard = () => {
   const dispatch = useAppDispatch();
   const [player1Name, setPlayer1Name] = useState('');
   const [player2Name, setPlayer2Name] = useState('');
-  const [undoMovesPerPlayer, setUndoMovesPerPlayer] = useState(0);
+  const [undoMovesPerPlayer, setUndoMovesPerPlayer] = useState(2);
   const [errorMessage, setErrorMessage] = useState('');
+  const [timePerMove, setTimePerMove] = useState(5);
 
   const fieldOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -28,6 +29,11 @@ const NameModal = () => {
           setUndoMovesPerPlayer(Number(value));
         }
         break;
+      case 'undomoves-perplayer':
+          if(Number(value) || value===''){
+            setTimePerMove(Number(value));
+          }
+          break;
     }
   };
 
@@ -46,6 +52,7 @@ const NameModal = () => {
             player2: player2Name
                 },
         undoMovesPerPlayer:undoMovesPerPlayer,
+        timePerMove:timePerMove,
       }));
     }
     else{
@@ -54,18 +61,16 @@ const NameModal = () => {
   };
 
   return (
-    <>
-      <div className='modal-backdrop'></div>
-      <div className='modal-outer-container'>
-        <div className='modal-container'>
+    <div className='name-board-container'>
+        <div className='name-board-inner-container'>
           <h3 className='modal-heading'>
             Get Onboarded
           </h3>
-          <form onSubmit={formOnSubmit} className="name-modal-form">
-            <div className='name-modal-field-container'>
+          <form onSubmit={formOnSubmit} className="name-board-form">
+            <div className='name-board-field-container'>
               <label
                 htmlFor='player1-name' 
-                className={`name-modal-text-field-label${player1Name === '' ? '' : ' value-filled'}`}
+                className={`name-board-text-field-label${player1Name === '' ? '' : ' value-filled'}`}
               >
                 Player 1 Name
               </label>
@@ -77,10 +82,10 @@ const NameModal = () => {
                 onChange={fieldOnchange} autoFocus
               />
             </div>
-            <div className='name-modal-field-container'>
+            <div className='name-board-field-container'>
               <label 
                 htmlFor='player2-name' 
-                className={`name-modal-text-field-label${player2Name === '' ? '' : ' value-filled'}`}
+                className={`name-board-text-field-label${player2Name === '' ? '' : ' value-filled'}`}
               >
                 Player 2 Name
               </label>
@@ -92,10 +97,10 @@ const NameModal = () => {
                 onChange={fieldOnchange}
               />
             </div>
-            <div className='name-modal-field-container'>
+            <div className='name-board-field-container'>
               <label 
                 htmlFor='undomoves-perplayer' 
-                className={`name-modal-text-field-label${errorMessage === '' ? '' : ' value-filled'}`}
+                className={`name-board-text-field-label value-filled`}
               >
                 Undo Moves Per Player
               </label>
@@ -107,11 +112,26 @@ const NameModal = () => {
                 onChange={fieldOnchange}
               />
             </div>
-            <small className='name-modal-text-error'>{errorMessage}</small>
-            <div className='name-modal-field-container'>
+            <small className='name-board-text-error'>{errorMessage}</small>
+            <div className='name-board-field-container'>
+              <label 
+                htmlFor='seconds-permove' 
+                className={`name-board-text-field-label value-filled`}
+              >
+                Seconds Per Move
+              </label>
+              <input 
+                type='text' 
+                id='seconds-permove' 
+                name='seconds-permove' 
+                value={timePerMove} 
+                onChange={fieldOnchange}
+              />
+            </div>
+            <div className='name-board-field-container'>
               <input 
                 type='submit' 
-                className='primary-button name-modal-submit-button' 
+                className='primary-button name-board-submit-button' 
                 aria-label='Play' 
                 value='Play' 
                 disabled={player1Name === '' || player2Name === ''} 
@@ -119,9 +139,8 @@ const NameModal = () => {
             </div>
           </form>
         </div>          
-      </div>
-    </>
+    </div>
   )
 };
 
-export default NameModal;
+export default NameBoard;

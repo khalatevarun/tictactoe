@@ -1,21 +1,37 @@
-.name-modal-form {
+.name-board-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.name-board-inner-container {
+  background-color: var(--white);
+  border-radius: 0.3rem;
+  max-width: 90%;
+  padding: 2rem 2rem;
+  position: relative;
+  width: 500px;
+}
+
+.name-board-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.name-modal-field-container {
+.name-board-field-container {
   font-size: 1rem;
   flex: 0 0 100%;
   margin: 1rem 0;
   position: relative;
 }
 
-.name-modal-field-container:last-child {
+.name-board-field-container:last-child {
   display: flex;
 }
 
-.name-modal-field-container .name-modal-text-field-label {
+.name-board-field-container .name-board-text-field-label {
   background-color: var(--white);
   color: var(--primary-blue);
   font-weight: 500;
@@ -26,11 +42,11 @@
   transition: all 0.3s ease;
 }
 
-.name-modal-text-error {
+.name-board-text-error {
   color: red;
 }
 
-.name-modal-field-container input[type='text'] {
+.name-board-field-container input[type='text'] {
   border: 0.1rem solid var(--light-grey);
   border-radius: 0.2rem;
   margin: 0 auto;
@@ -39,20 +55,20 @@
   width: 100%;
 }
 
-.name-modal-field-container input[type='text']:focus {
+.name-board-field-container input[type='text']:focus {
   border: 0.15rem solid var(--primary-blue);
   outline: 0;
   padding-top: 0.7rem;
 }
 
-.name-modal-field-container:focus-within .name-modal-text-field-label,
-.name-modal-field-container .value-filled {
+.name-board-field-container:focus-within .name-board-text-field-label,
+.name-board-field-container .value-filled {
   font-size: 0.8rem;
   padding: 0 0.2rem;
   top: -0.35rem;
 }
 
-.name-modal-submit-button {
+.name-board-submit-button {
   margin-left: auto;
   margin-top: 1rem;
 }

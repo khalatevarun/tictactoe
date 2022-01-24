@@ -1,10 +1,10 @@
 import './playground.css';
 
 import GameBoard from '../../components/gameBoard/GameBoard';
-import NameModal from '../../components/nameModal/NameModal';
 import WinnerModal from '../../components/winnerModal/WinnerModal';
 import { useAppSelector } from '../../redux/store/hooks';
 import Header from '../../components/header/Header';
+import NameBoard from '../../components/nameBoard/NameBoard';
 
 const Playground = () => {
   const {
@@ -12,25 +12,23 @@ const Playground = () => {
     currentOutcome,
   } = useAppSelector((state) => state.gameData);
 
-  const isWinner = currentOutcome !== 0;
+ 
   const arePlayersInitialized = players.player1 === null && players.player2 === null;
 
   return (
     <>
       <Header/>
-      {isWinner && (
+      {currentOutcome !== 0 && (
         <WinnerModal />
       )}
-      {arePlayersInitialized && (
-        <NameModal />
-      )}
-      {/* <nav className='home-header-container'>
-        <h3 className='home-header-text'>Tic Tac Toe</h3>
-      </nav> */}
-      <main className='home-main-container'>
+      {arePlayersInitialized ? (
+        <NameBoard />
+      ): (
+      <div className='playground-main-container'>
         <GameBoard />
-        {/* <LeaderBoard /> */}
-      </main>
+      </div>
+      )}
+     
     </>
   )
 }

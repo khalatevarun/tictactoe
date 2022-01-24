@@ -1,7 +1,6 @@
 import {
   gameDataType,
   onboardDataType,
-  playersDataType,
 } from '../../types';
 import findCurrentOutcome from '../../utils/findCurrentOutcome';
 import { NEW_GAME, PLAY_TURN, RESET_GAME, START_GAME, UNDO_MOVE } from '../../constants/actionTypes';
@@ -18,6 +17,7 @@ const initialState: gameDataType = {
   gameStatus:  'paused',
   undoPlayer1: 0,
   undoPlayer2: 0,
+  timePerMove:null,
 };
 
 const gameReducer = (
@@ -36,6 +36,7 @@ const gameReducer = (
         currentPlayer: 1,
         undoPlayer1: onboardData.undoMovesPerPlayer,
         undoPlayer2: onboardData.undoMovesPerPlayer,
+        timePerMove: onboardData.timePerMove,
       };
       
     case PLAY_TURN:

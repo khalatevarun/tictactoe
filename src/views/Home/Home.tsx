@@ -7,15 +7,14 @@ const Home = () => {
 
     const navigate = useNavigate();
 
-
     const handleLeaderboard = () => {
         navigate(ROUTES.LEADERBOARD);
     }
 
-
     const handlePlayground = () => {
         navigate(ROUTES.PLAYGROUND);
     }
+    
     return (
     <div className="home-container">   
         <div className="home-left-container">
@@ -24,7 +23,7 @@ const Home = () => {
         <div className="home-right-container">
             <h1>Welcome to</h1>
             <h1>Yet Another Tic Tac Toe Game</h1>
-            <div>
+            <div className='home-buttons'>
             <button className='primary-button' onClick={handlePlayground} >
                 Go to Playground
             </button><br></br><br></br>

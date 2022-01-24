@@ -40,7 +40,7 @@ body {
 .modal-backdrop,
 .modal-outer-container {
   background-color: var(--black);
-  height: 100vh;
+  height: 100%;
   opacity: 0.5;
   position: fixed;
   transition: opacity 0.3s ease;
