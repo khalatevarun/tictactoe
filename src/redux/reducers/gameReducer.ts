@@ -85,9 +85,9 @@ const gameReducer = (
         currentOutcome: 0,
         playedSquaresSequence: [],
         movesTracker: Array(9).fill(0),
-        gameStats:'paused',
+        gameStatus:'paused',
         undoPlayer1:2,
-        undoPlayer:2,
+        undoPlayer2:2,
       };
 
     case NEW_GAME:
@@ -103,7 +103,7 @@ const gameReducer = (
         movesTracker: Array(9).fill(0),
         gameStatus:'paused',
         undoPlayer1:2,
-        undoPlayer:2,
+        undoPlayer2:2,
       };
     default:
       return {
