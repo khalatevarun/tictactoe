@@ -1,0 +1,32 @@
+.home-header-container {
+  height: 80px;
+}
+
+.home-header-text {
+  background: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
+  background-clip: text;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.6rem 0 0 2rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-main-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-around;
+  height: 100vh;
+  box-sizing: border-box;
+}

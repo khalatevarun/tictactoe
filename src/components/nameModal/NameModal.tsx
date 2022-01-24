@@ -41,8 +41,10 @@ const NameModal = () => {
     }
     else if (player1Name !== '' && player2Name !== '') {
       dispatch(initializeGame({
-        players:{player1: player1Name,
-        player2: player2Name},
+        players:{
+            player1: player1Name,
+            player2: player2Name
+                },
         undoMovesPerPlayer:undoMovesPerPlayer,
       }));
     }
@@ -65,7 +67,7 @@ const NameModal = () => {
                 htmlFor='player1-name' 
                 className={`name-modal-text-field-label${player1Name === '' ? '' : ' value-filled'}`}
               >
-                Enter Player 1 Name
+                Player 1 Name
               </label>
               <input 
                 type='text' 
@@ -80,7 +82,7 @@ const NameModal = () => {
                 htmlFor='player2-name' 
                 className={`name-modal-text-field-label${player2Name === '' ? '' : ' value-filled'}`}
               >
-                Enter Player 2 Name
+                Player 2 Name
               </label>
               <input 
                 type='text' 

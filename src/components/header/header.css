@@ -1,0 +1,13 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 60px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.header-right a {
+  margin-right: 30px;
+  text-decoration: none;
+  color: white;
+}

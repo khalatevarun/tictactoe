@@ -1,37 +1,40 @@
 import './home.css';
-
-import GameBoard from '../../components/gameBoard/GameBoard';
-import LeaderBoard from '../../components/leaderBoard/LeaderBoard';
-import NameModal from '../../components/nameModal/NameModal';
-import WinnerModal from '../../components/winnerModal/WinnerModal';
-import { useAppSelector } from '../../redux/store/hooks';
+import homebg from '../../assets/homebg.jpg';
+import { useNavigate } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 
 const Home = () => {
-  const {
-    players,
-    currentOutcome,
-  } = useAppSelector((state) => state.gameData);
 
-  const isWinner = currentOutcome !== 0;
-  const arePlayersInitialized = players.player1 === null && players.player2 === null;
+    const navigate = useNavigate();
 
-  return (
-    <>
-      {isWinner && (
-        <WinnerModal />
-      )}
-      {arePlayersInitialized && (
-        <NameModal />
-      )}
-      {/* <nav className='home-header-container'>
-        <h3 className='home-header-text'>Tic Tac Toe</h3>
-      </nav> */}
-      <main className='home-main-container'>
-        <GameBoard />
-        {/* <LeaderBoard /> */}
-      </main>
-    </>
-  )
+
+    const handleLeaderboard = () => {
+        navigate(ROUTES.LEADERBOARD);
+    }
+
+
+    const handlePlayground = () => {
+        navigate(ROUTES.PLAYGROUND);
+    }
+    return (
+    <div className="home-container">   
+        <div className="home-left-container">
+            <img src={homebg}  />
+        </div>
+        <div className="home-right-container">
+            <h1>Welcome to</h1>
+            <h1>Yet Another Tic Tac Toe Game</h1>
+            <div>
+            <button className='primary-button' onClick={handlePlayground} >
+                Go to Playground
+            </button><br></br><br></br>
+            <button className='primary-button' onClick={handleLeaderboard} >
+                View Leaderboard
+            </button>
+            </div>
+        </div>
+    </div>
+    );
 }
 
 export default Home;
