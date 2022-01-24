@@ -1,5 +1,6 @@
 import {
   gameDataType,
+  onboardDataType,
   playersDataType,
 } from '../../types';
 import findCurrentOutcome from '../../utils/findCurrentOutcome';
@@ -21,20 +22,20 @@ const initialState: gameDataType = {
 
 const gameReducer = (
   state: gameDataType = initialState, 
-  action: {type: string, payload?: playersDataType | number}
+  action: {type: string, payload?: onboardDataType | number}
 ) => {
   switch(action.type) {
     case START_GAME:
-      const playersData = action.payload as playersDataType;
+      const onboardData = action.payload as onboardDataType;
       return {
         ...state,
         players: {
-          player1: playersData.player1,
-          player2: playersData.player2,
+          player1: onboardData.players.player1,
+          player2: onboardData.players.player2,
         },
         currentPlayer: 1,
-        undoPlayer1: 2,
-        undoPlayer2: 2,
+        undoPlayer1: onboardData.undoMovesPerPlayer,
+        undoPlayer2: onboardData.undoMovesPerPlayer,
       };
       
     case PLAY_TURN:

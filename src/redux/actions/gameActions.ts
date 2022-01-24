@@ -1,4 +1,4 @@
-import { playersDataType } from '../../types';
+import { onboardDataType, playersDataType } from '../../types';
 import {
   NEW_GAME,
   PLAY_TURN,
@@ -7,11 +7,11 @@ import {
   UNDO_MOVE,
 } from '../../constants/actionTypes/gameActionTypes';
 
-export const initializeGame = (players: playersDataType) => {
+export const initializeGame = (onboardData: onboardDataType) => {
   return {
     type: START_GAME,
     payload: {
-      ...players,
+      ...onboardData,
     },
   };
 };

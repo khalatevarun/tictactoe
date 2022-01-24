@@ -9,6 +9,7 @@ const NameModal = () => {
   const dispatch = useAppDispatch();
   const [player1Name, setPlayer1Name] = useState('');
   const [player2Name, setPlayer2Name] = useState('');
+  const [undoMovesPerPlayer, setUndoMovesPerPlayer] = useState(0);
   const [errorMessage, setErrorMessage] = useState('');
 
   const fieldOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,6 +22,11 @@ const NameModal = () => {
         break;
       case 'player2-name':
         setPlayer2Name(value.trim());
+        break;
+      case 'undomoves-perplayer':
+        if(Number(value) || value===''){
+          setUndoMovesPerPlayer(Number(value));
+        }
         break;
     }
   };
@@ -35,8 +41,9 @@ const NameModal = () => {
     }
     else if (player1Name !== '' && player2Name !== '') {
       dispatch(initializeGame({
-        player1: player1Name,
-        player2: player2Name,
+        players:{player1: player1Name,
+        player2: player2Name},
+        undoMovesPerPlayer:undoMovesPerPlayer,
       }));
     }
     else{
@@ -80,6 +87,21 @@ const NameModal = () => {
                 id='player2-name' 
                 name='player2-name' 
                 value={player2Name} 
+                onChange={fieldOnchange}
+              />
+            </div>
+            <div className='name-modal-field-container'>
+              <label 
+                htmlFor='undomoves-perplayer' 
+                className={`name-modal-text-field-label${errorMessage === '' ? '' : ' value-filled'}`}
+              >
+                Undo Moves Per Player
+              </label>
+              <input 
+                type='text' 
+                id='undomoves-perplayer' 
+                name='undomoves-perplayer' 
+                value={undoMovesPerPlayer} 
                 onChange={fieldOnchange}
               />
             </div>

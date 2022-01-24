@@ -19,6 +19,11 @@ export type playersDataType = {
   player2: null | string;
 }
 
+export type onboardDataType = {
+  players:playersDataType;
+  undoMovesPerPlayer:number;
+}
+
 export type gameDataType = {
   players: playersDataType;
   currentPlayer: null | number;
