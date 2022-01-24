@@ -6,8 +6,17 @@
   color: white;
 }
 
-.header-right a {
+.header-left {
+  display: flex;
+}
+
+.header-container a {
   margin-right: 30px;
   text-decoration: none;
   color: white;
+}
+
+.header-container img {
+  width: 20px;
+  margin-right: 10px;
 }

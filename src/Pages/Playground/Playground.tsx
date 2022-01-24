@@ -1,10 +1,10 @@
 import './playground.css';
 
 import GameBoard from '../../components/gameBoard/GameBoard';
-import LeaderBoard from '../LeaderBoard/LeaderBoard';
 import NameModal from '../../components/nameModal/NameModal';
 import WinnerModal from '../../components/winnerModal/WinnerModal';
 import { useAppSelector } from '../../redux/store/hooks';
+import Header from '../../components/header/Header';
 
 const Playground = () => {
   const {
@@ -17,6 +17,7 @@ const Playground = () => {
 
   return (
     <>
+      <Header/>
       {isWinner && (
         <WinnerModal />
       )}

@@ -4,6 +4,7 @@ import React from 'react';
 
 import { useAppSelector } from '../../redux/store/hooks';
 import { leaderboardLocalUserDataType } from '../../types';
+import Header from '../../components/header/Header';
 
 const LeaderBoard = () => {
   const {
@@ -20,6 +21,8 @@ const LeaderBoard = () => {
   
   return (
     <>
+    <Header/>
+    <div className='leaderboard-container'>
     <div className='leaderboard-outer-container'>
       <h2 className='modal-heading'>
         LeaderBoard
@@ -28,8 +31,9 @@ const LeaderBoard = () => {
         {leaderBoard.sort(sortLeaderboardEntries).map((userDetails, index) => (
           <React.Fragment key={`${userDetails.name} ${index}`}>
             <div className='leaderboard-user-container'>
-             <div>{index+1}</div>
+            
               <div className='leaderboard-user'>
+              <h2>{index+1}</h2>
               <h6 className='leaderboard-user-name'>
                 {userDetails.name}
               </h6>
@@ -43,6 +47,7 @@ const LeaderBoard = () => {
           </React.Fragment>
         ))}
       </div>
+    </div>
     </div>
     </>
   )
