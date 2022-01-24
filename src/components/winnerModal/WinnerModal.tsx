@@ -61,7 +61,7 @@ const WinnerModal = () => {
             </>
           )}
         </h3>
-        <h3 className='winner-modal-crown-symbol'>👑</h3>
+        <h3 className='winner-modal-crown-symbol'>{currentOutcome === -1 ?'🤝':'👑'}</h3>
         <div className='winner-modal-button-container'>
           <button className='winner-modal-button' onClick={(e) => buttonOnClick(e, true)}>
             Launch New
