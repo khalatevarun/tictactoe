@@ -29,11 +29,7 @@ const NameBoard = () => {
           setUndoMovesPerPlayer(Number(value));
         }
         break;
-      case 'undomoves-perplayer':
-          if(Number(value) || value===''){
-            setTimePerMove(Number(value));
-          }
-          break;
+     
     }
   };
 
@@ -52,7 +48,6 @@ const NameBoard = () => {
             player2: player2Name
                 },
         undoMovesPerPlayer:undoMovesPerPlayer,
-        timePerMove:timePerMove,
       }));
     }
     else{
@@ -113,21 +108,7 @@ const NameBoard = () => {
               />
             </div>
             <small className='name-board-text-error'>{errorMessage}</small>
-            <div className='name-board-field-container'>
-              <label 
-                htmlFor='seconds-permove' 
-                className={`name-board-text-field-label value-filled`}
-              >
-                Seconds Per Move
-              </label>
-              <input 
-                type='text' 
-                id='seconds-permove' 
-                name='seconds-permove' 
-                value={timePerMove} 
-                onChange={fieldOnchange}
-              />
-            </div>
+            
             <div className='name-board-field-container'>
               <input 
                 type='submit' 

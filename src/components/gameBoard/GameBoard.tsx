@@ -11,7 +11,6 @@ import {
   useAppDispatch,
   useAppSelector,
 } from '../../redux/store/hooks';
-import { CountdownTimer } from '../timer/Timer';
 
 const GameBoard = () => {
   const dispatch = useAppDispatch();
@@ -76,20 +75,6 @@ const GameBoard = () => {
       <h2 className='modal-heading gameboard-heading'>
         PlayGround
       </h2>
-      {/* <div style={{
-          display: 'flex',
-          justifyContent: 'space-around', 
-          flexWrap: 'wrap',
-          marginBottom:'20px',
-    }}>
-      <CountdownTimer 
-        seconds={5} 
-        size={60}
-        strokeBgColor="white"
-        strokeColor="red"
-        strokeWidth={2}
-      />
-        </div> */}
       <div className="gameboard-outer-container">
      
         <div className="gameboard-player-details">
@@ -124,9 +109,9 @@ const GameBoard = () => {
         </div>
       </div>
       <div className='gameboard-user-container'>
-        <h6>
+        <h2>
          <b> {currentPlayer === 1 ? players.player1 : players.player2}'s turn</b>
-        </h6>
+        </h2>
       </div>
       <div className='gameboard-buttons-container'>
       <button  className='primary-button gameboard-buttons'onClick={(e) => buttonOnClick(e, true)}>
