@@ -42,8 +42,6 @@ const NameModal = () => {
     else{
       return;
     }
-
-   
   };
 
   return (

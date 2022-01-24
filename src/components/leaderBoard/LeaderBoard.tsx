@@ -2,7 +2,6 @@ import './leaderBoard.css';
 
 import React from 'react';
 
-import userIcon from '../../../assets/images/userIcon.png';
 import { useAppSelector } from '../../redux/store/hooks';
 import { leaderboardLocalUserDataType } from '../../types';
 
@@ -29,7 +28,7 @@ const LeaderBoard = () => {
         {leaderBoard.sort(sortLeaderboardEntries).map((userDetails, index) => (
           <React.Fragment key={`${userDetails.name} ${index}`}>
             <div className='leaderboard-user-container'>
-              <img src={userIcon} alt='User Icon' />
+             <div>{index+1}</div>
               <div className='leaderboard-user'>
               <h6 className='leaderboard-user-name'>
                 {userDetails.name}
