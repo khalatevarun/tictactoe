@@ -93,7 +93,6 @@ const GameBoard = () => {
       <div className="gameboard-outer-container">
      
         <div className="gameboard-player-details">
-          {/* <img src={userIcon} alt='User Icon' className='gameboard-user-icon'/> */}
           <div className='gameboard-sqaures'>✕</div>
           <p>{players.player1}</p>
           <button 

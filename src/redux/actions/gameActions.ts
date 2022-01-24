@@ -5,7 +5,7 @@ import {
   RESET_GAME,
   START_GAME,
   UNDO_MOVE,
-} from '../../constants/actionTypes/gameActionTypes';
+} from '../../constants/actionTypes';
 
 export const initializeGame = (onboardData: onboardDataType) => {
   return {

@@ -4,7 +4,7 @@ import {
   playersDataType,
 } from '../../types';
 import findCurrentOutcome from '../../utils/findCurrentOutcome';
-import { NEW_GAME, PLAY_TURN, RESET_GAME, START_GAME, UNDO_MOVE } from '../../constants/actionTypes/gameActionTypes';
+import { NEW_GAME, PLAY_TURN, RESET_GAME, START_GAME, UNDO_MOVE } from '../../constants/actionTypes';
 
 const initialState: gameDataType = {
   players: {

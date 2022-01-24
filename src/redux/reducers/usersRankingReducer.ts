@@ -4,7 +4,7 @@ import {
   usersRankingDataType,
 } from '../../types';
 import saveScores from '../../utils/saveScores';
-import { UPDATE_LEADERBOARD } from '../../constants/actionTypes/userActionTypes';
+import { UPDATE_LEADERBOARD } from '../../constants/actionTypes';
 
 let localLeaderboard: leaderboardLocalUserDataType[] = [];
 if (localStorage.getItem('Leaderboard') !== null) {
