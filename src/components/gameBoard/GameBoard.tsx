@@ -77,9 +77,10 @@ const GameBoard = () => {
         PlayGround
       </h2>
       <div style={{
-      display: 'flex',
-        justifyContent: 'space-around', 
-          flexWrap: 'wrap'
+          display: 'flex',
+          justifyContent: 'space-around', 
+          flexWrap: 'wrap',
+          marginBottom:'20px',
     }}>
       <CountdownTimer 
         seconds={5} 
