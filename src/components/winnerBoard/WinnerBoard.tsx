@@ -1,4 +1,4 @@
-import './winnerModal.css';
+import './winnerBoard.css';
 
 import { useEffect } from 'react';
 
@@ -12,7 +12,7 @@ import {
   useAppSelector,
 } from '../../redux/store/hooks';
 
-const WinnerModal = () => {
+const WinnerBoard = () => {
   const dispatch = useAppDispatch();
   const {
     players,
@@ -75,4 +75,4 @@ const WinnerModal = () => {
   )
 }
 
-export default WinnerModal;
+export default WinnerBoard;
