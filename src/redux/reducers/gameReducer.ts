@@ -17,6 +17,7 @@ const initialState: gameDataType = {
   gameStatus:  'paused',
   undoPlayer1: 0,
   undoPlayer2: 0,
+  undoMovesPerPlayer:0,
 };
 
 const gameReducer = (
@@ -35,6 +36,7 @@ const gameReducer = (
         currentPlayer: 1,
         undoPlayer1: onboardData.undoMovesPerPlayer,
         undoPlayer2: onboardData.undoMovesPerPlayer,
+        undoMovesPerPlayer: onboardData.undoMovesPerPlayer,
       };
       
     case PLAY_TURN:
@@ -79,6 +81,7 @@ const gameReducer = (
       };
 
     case RESET_GAME:
+      console.log("RESETTING GAME >>>>",state.undoMovesPerPlayer);
       return {
         ...state,
         currentPlayer: 1,
@@ -86,8 +89,8 @@ const gameReducer = (
         playedSquaresSequence: [],
         movesTracker: Array(9).fill(0),
         gameStatus:'paused',
-        undoPlayer1:2,
-        undoPlayer2:2,
+        undoPlayer1:state.undoMovesPerPlayer,
+        undoPlayer2:state.undoMovesPerPlayer,
       };
 
     case NEW_GAME:
@@ -102,8 +105,8 @@ const gameReducer = (
         playedSquaresSequence: [],
         movesTracker: Array(9).fill(0),
         gameStatus:'paused',
-        undoPlayer1:2,
-        undoPlayer2:2,
+        undoPlayer1:state.undoMovesPerPlayer,
+        undoPlayer2:state.undoMovesPerPlayer,
       };
     default:
       return {

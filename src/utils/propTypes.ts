@@ -33,4 +33,5 @@ export type gameDataType = {
   gameStatus: string,
   undoPlayer1: number;
   undoPlayer2: number;
+  undoMovesPerPlayer: number,
 }

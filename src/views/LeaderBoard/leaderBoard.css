@@ -35,6 +35,17 @@
   width: 50px;
 }
 
+.leaderboard-empty-container {
+  text-align: center;
+}
+
+.leaderboard-empty-text {
+  color: red;
+  font-size: x-large;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
 .leaderboard-user {
   flex: 0 0 calc(100% - 60px);
   display: flex;

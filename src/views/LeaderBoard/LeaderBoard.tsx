@@ -5,6 +5,9 @@ import React from 'react';
 import { useAppSelector } from '../../redux/store/hooks';
 import { leaderboardLocalUserDataType } from '../../utils/propTypes';
 import Header from '../../components/header/Header';
+import { useNavigate } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
+
 
 const LeaderBoard = () => {
   const {
@@ -18,6 +21,14 @@ const LeaderBoard = () => {
       return -1;
     else return 0;
   }
+
+  const navigate = useNavigate();
+
+ 
+  const handlePlayground = () => {
+      navigate(ROUTES.PLAYGROUND);
+  }
+  console.log(leaderBoard)
   
   return (
     <>
@@ -27,8 +38,9 @@ const LeaderBoard = () => {
       <h2 className='modal-heading'>
         LeaderBoard
       </h2>
-      <div className='leaderboard-users-container'>
-        {leaderBoard.sort(sortLeaderboardEntries).map((userDetails, index) => (
+      {leaderBoard.length > 0 ? 
+      (<div className='leaderboard-users-container'>
+       {leaderBoard.sort(sortLeaderboardEntries).map((userDetails, index) => (
           <React.Fragment key={`${userDetails.name} ${index}`}>
             <div className='leaderboard-user-container'>
             
@@ -45,8 +57,15 @@ const LeaderBoard = () => {
             </div>
             <hr />
           </React.Fragment>
-        ))}
-      </div>
+       ))}
+        </div>):
+      <div className='leaderboard-empty-container'>
+      <div className='leaderboard-empty-text'>The leaderboard is empty</div> 
+      <div>Play a game now and see where do you stand in the leaderboard.</div><br></br>
+      <button className='primary-button' onClick={handlePlayground} >
+        Go to Playground
+    </button>
+      </div>}
     </div>
     </div>
     </>
