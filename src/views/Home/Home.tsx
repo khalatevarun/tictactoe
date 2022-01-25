@@ -22,7 +22,7 @@ const Home = () => {
         </div>
         <div className="home-right-container">
             <h1>Welcome to</h1>
-            <h1>Yet Another Tic Tac Toe Game</h1>
+            <h1>Yet Another Tic Tac Toe</h1>
             <div className='home-buttons'>
             <button className='primary-button' onClick={handlePlayground} >
                 Go to Playground

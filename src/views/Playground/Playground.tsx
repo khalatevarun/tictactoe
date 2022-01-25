@@ -18,7 +18,7 @@ const Playground = () => {
   return (
     <>
       <Header/>
-      {currentOutcome !== 0 && (
+      {/* {currentOutcome !== 0 && (
         <WinnerModal />
       )}
       {arePlayersInitialized ? (
@@ -27,7 +27,9 @@ const Playground = () => {
       <div className='playground-main-container'>
         <GameBoard />
       </div>
-      )}
+      )} */}
+
+      {currentOutcome !== 0 ? (<WinnerModal/>) : arePlayersInitialized ? <NameBoard/> : <div className='playground-main-container'><GameBoard/></div>}
      
     </>
   )

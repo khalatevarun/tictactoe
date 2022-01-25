@@ -45,8 +45,7 @@ const WinnerModal = () => {
 
   return (
     <>
-    <div className='modal-backdrop'></div>
-    <div className='modal-outer-container'>
+  
       <div className='modal-container'>
         <h3 className='modal-heading'>
           {currentOutcome === -1 && (
@@ -71,7 +70,7 @@ const WinnerModal = () => {
           </button>
         </div>
       </div>          
-    </div>
+   
   </>
   )
 }
