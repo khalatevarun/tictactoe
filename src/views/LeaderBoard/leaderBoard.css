@@ -65,10 +65,9 @@
 
 .leaderboard-outer-container hr {
   opacity: 0.5;
-  width: 80%;
 }
 
-@media (max-width: 632px) {
+@media (max-width: 750px) {
   .leaderboard-outer-container {
     flex-basis: 100%;
   }

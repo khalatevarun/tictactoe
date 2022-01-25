@@ -20,3 +20,11 @@
   width: 20px;
   margin-right: 10px;
 }
+
+@media only screen and (max-width: 750px) {
+  .header-container {
+    padding: 5px 20px;
+    font-size: 12px;
+    align-items: center;
+  }
+}
