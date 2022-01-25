@@ -32,3 +32,11 @@ img {
   width: 100%;
   max-height: 100%;
 }
+@media only screen and (max-width: 750px) {
+  .home-left-container {
+    display: none;
+  }
+  .home-right-container {
+    width: 100%;
+  }
+}
