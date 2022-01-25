@@ -1,4 +1,4 @@
-import { leaderboardUserDataType } from '../../types';
+import { leaderboardUserDataType } from '../../utils/propTypes';
 import { UPDATE_LEADERBOARD } from '../../constants/actionTypes';
 
 export function updateLeaderboard(usersData: leaderboardUserDataType) {

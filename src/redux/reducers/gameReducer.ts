@@ -1,7 +1,7 @@
 import {
   gameDataType,
   onboardDataType,
-} from '../../types';
+} from '../../utils/propTypes';
 import findCurrentOutcome from '../../utils/findCurrentOutcome';
 import { NEW_GAME, PLAY_TURN, RESET_GAME, START_GAME, UNDO_MOVE } from '../../constants/actionTypes';
 

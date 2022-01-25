@@ -2,7 +2,7 @@ import {
   leaderboardLocalUserDataType,
   leaderboardUserDataType,
   usersRankingDataType,
-} from '../../types';
+} from '../../utils/propTypes';
 import saveScores from '../../utils/saveScores';
 import { UPDATE_LEADERBOARD } from '../../constants/actionTypes';
 

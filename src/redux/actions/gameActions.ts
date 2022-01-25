@@ -1,4 +1,4 @@
-import { onboardDataType, playersDataType } from '../../types';
+import { onboardDataType, playersDataType } from '../../utils/propTypes';
 import {
   NEW_GAME,
   PLAY_TURN,

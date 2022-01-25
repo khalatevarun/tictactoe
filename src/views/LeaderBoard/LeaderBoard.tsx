@@ -3,7 +3,7 @@ import './leaderBoard.css';
 import React from 'react';
 
 import { useAppSelector } from '../../redux/store/hooks';
-import { leaderboardLocalUserDataType } from '../../types';
+import { leaderboardLocalUserDataType } from '../../utils/propTypes';
 import Header from '../../components/header/Header';
 
 const LeaderBoard = () => {

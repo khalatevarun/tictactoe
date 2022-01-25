@@ -1,7 +1,7 @@
 import {
   leaderboardLocalUserDataType,
   leaderboardUserDataType,
-} from '../types';
+} from './propTypes';
 
 const saveScores = (participantData: leaderboardUserDataType) => {
   const usersLocalData = localStorage.getItem('Leaderboard');
