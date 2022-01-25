@@ -81,7 +81,7 @@ const gameReducer = (
       };
 
     case RESET_GAME:
-      console.log("RESETTING GAME >>>>",state.undoMovesPerPlayer);
+    
       return {
         ...state,
         currentPlayer: 1,

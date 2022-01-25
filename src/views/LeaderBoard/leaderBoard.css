@@ -50,6 +50,7 @@
   flex: 0 0 calc(100% - 60px);
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .leaderboard-user-name {

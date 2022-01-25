@@ -61,6 +61,21 @@
   padding-top: 0.7rem;
 }
 
+.name-board-field-container input[type='number'] {
+  border: 0.1rem solid var(--light-grey);
+  border-radius: 0.2rem;
+  margin: 0 auto;
+  padding: 0.8rem 0.2rem 0.8rem 1rem;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.name-board-field-container input[type='number']:focus {
+  border: 0.15rem solid var(--primary-blue);
+  outline: 0;
+  padding-top: 0.7rem;
+}
+
 .name-board-field-container:focus-within .name-board-text-field-label,
 .name-board-field-container .value-filled {
   font-size: 0.8rem;

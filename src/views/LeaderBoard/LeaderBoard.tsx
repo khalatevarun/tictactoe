@@ -28,7 +28,6 @@ const LeaderBoard = () => {
   const handlePlayground = () => {
       navigate(ROUTES.PLAYGROUND);
   }
-  console.log(leaderBoard)
   
   return (
     <>

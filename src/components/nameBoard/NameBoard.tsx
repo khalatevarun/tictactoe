@@ -24,9 +24,7 @@ const NameBoard = () => {
         setPlayer2Name(value.trim());
         break;
       case 'undomoves-perplayer':
-        if(Number(value) || value===''){
           setUndoMovesPerPlayer(Number(value));
-        }
         break;
      
     }
@@ -40,17 +38,31 @@ const NameBoard = () => {
       setErrorMessage("Both players can't have the same. Please enter unique names.");
       return;
     }
-    else if (player1Name !== '' && player2Name !== '') {
-      dispatch(initializeGame({
+    else if(undoMovesPerPlayer > 10 || undoMovesPerPlayer < 0){
+      // undo mover per player can be only between 0 - 10.
+      setErrorMessage("Please enter undo mover per player between 0 - 5.");
+      return;
+    }
+    // else if (player1Name !== '' && player2Name !== '') {
+    //   dispatch(initializeGame({
+    //     players:{
+    //         player1: player1Name,
+    //         player2: player2Name
+    //             },
+    //     undoMovesPerPlayer:undoMovesPerPlayer,
+    //   }));
+    // }
+    // else{
+    //   return;
+    // }
+    else{
+        dispatch(initializeGame({
         players:{
             player1: player1Name,
             player2: player2Name
                 },
         undoMovesPerPlayer:undoMovesPerPlayer,
       }));
-    }
-    else{
-      return;
     }
   };
 
@@ -99,7 +111,8 @@ const NameBoard = () => {
                 Undo Moves Per Player
               </label>
               <input 
-                type='text' 
+                type='number'
+               
                 id='undomoves-perplayer' 
                 name='undomoves-perplayer' 
                 value={undoMovesPerPlayer} 
