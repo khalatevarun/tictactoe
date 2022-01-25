@@ -1,5 +1,5 @@
 import './home.css';
-import homebg from '../../assets/homebg.jpg';
+import homebg3 from '../../assets/homebg4.png';
 import { useNavigate } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
@@ -18,7 +18,7 @@ const Home = () => {
     return (
     <div className="home-container">   
         <div className="home-left-container">
-            <img src={homebg}  />
+            <img src={homebg3}  />
         </div>
         <div className="home-right-container">
             <h1>Welcome to</h1>
