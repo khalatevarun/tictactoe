@@ -11,7 +11,6 @@ const NameBoard = () => {
   const [player2Name, setPlayer2Name] = useState('');
   const [undoMovesPerPlayer, setUndoMovesPerPlayer] = useState(2);
   const [errorMessage, setErrorMessage] = useState('');
-  const [timePerMove, setTimePerMove] = useState(5);
 
   const fieldOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();

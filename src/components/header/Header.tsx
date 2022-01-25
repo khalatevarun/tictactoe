@@ -17,14 +17,12 @@ return(
         </Link>
     </div>
     <div className="header-right">
-       
         <Link to={ROUTES.PLAYGROUND}>
             Playground
         </Link>
         <Link to={ROUTES.LEADERBOARD}>
             Leaderboard
         </Link>
-       
     </div>
 </div>
 )

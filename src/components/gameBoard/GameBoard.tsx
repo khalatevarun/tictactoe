@@ -1,6 +1,5 @@
 import './gameBoard.css';
 
-import userIcon from '../../../assets/images/userIcon.png';
 import {
   playTurn,
   resetGame,
@@ -94,7 +93,6 @@ const GameBoard = () => {
           {renderSquares(movesTracker)}
         </div>
         <div className="gameboard-player-details">
-          {/* <img src={userIcon} alt='User Icon' className='gameboard-user-icon'/> */}
           <div className='gameboard-sqaures'>〇</div>
           <p>{players.player2}</p>
           <button 
